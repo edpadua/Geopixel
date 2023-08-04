@@ -13,7 +13,7 @@
     background-color: red;
     border-radius: 50%;
     display: inline-block;
-    transition: transform 2500ms ease-in-out; 
+    transition: transform 1000ms ease-in-out; 
   }
 
   
