@@ -1,0 +1,8 @@
+
+.app_containter{
+  display: flex;
+}
+
+.app_column{
+  width:50%;
+}

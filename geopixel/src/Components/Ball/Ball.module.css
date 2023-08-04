@@ -1,0 +1,19 @@
+.container{
+    min-height:100vh;
+    background-color: var(--ball-background);
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ball {
+    height: 25px;
+    width: 25px;
+    background-color: red;
+    border-radius: 50%;
+    display: inline-block;
+    transition: transform 2500ms ease-in-out; 
+  }
+
+  

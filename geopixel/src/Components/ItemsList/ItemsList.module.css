@@ -1,0 +1,45 @@
+.container{
+    min-height:50vh;
+    background-color: var(--items-background);
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form_list{
+ 
+    display:block;
+}
+
+.form_list_item_inputs{
+    padding-bottom:20px;
+}
+
+.form_control{
+    font-size: 1rem;
+    padding: 0.375rem 0.75rem;
+}
+
+
+.form_list_item{
+   
+   
+}
+
+.form_list_button{
+   cursor:pointer;
+   height:30px;
+   padding: 0.375rem 0.75rem;
+}
+
+.selected_item{
+    text-align:center;
+    padding-top:20px;
+}

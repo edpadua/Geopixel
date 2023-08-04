@@ -1,0 +1,12 @@
+.container{
+    min-height:50vh;
+    background-color: var(--clock-background);
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.clock_text{
+    font-weight:500;
+}
