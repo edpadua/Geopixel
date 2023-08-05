@@ -9,7 +9,7 @@ function ItemsList() {
     const [value, setValue] = useState("");
     const [option, setOption] = useState();
 
-
+    const optionDefault = "Selecione uma opção"
 
     const removeList = e => {
         e.preventDefault();
@@ -21,16 +21,16 @@ function ItemsList() {
             alert(`Elemento "${value}" não existe na lista`);
         } else {
 
-            
+
             const newList = list.filter(item => item !== value);
-            
+
             setList(newList);
             setValue("");
             if (newList.length > 0 && option !== "") {
-                
+
                 setOption("default");
             } else {
-                
+
                 setOption("default");
             }
 
@@ -46,7 +46,7 @@ function ItemsList() {
 
     const addList = e => {
         e.preventDefault();
-        
+
         console.log("text", value)
         if (!value) {
             alert(`Digite um valor para inserir na lista`);
@@ -54,8 +54,8 @@ function ItemsList() {
         } else {
             if (!list.includes(value)) {
                 const newList = [...list, value];
-               
-               
+
+
                 setList(newList);
                 alert(`Elemento "${value}" foi inserido com sucesso.`);
             } else {
@@ -84,7 +84,7 @@ function ItemsList() {
                             name="list" className={styles.form_control}
                             onChange={(e) => setOption(e.target.value)}
                             defaultValue={"default"} >
-                            <option value={"default"} disabled >Selecione uma opção</option>
+                            <option value={"default"} disabled >{optionDefault}</option>
                             {list.map((option, index) => (
                                 <option key={index} value={option}>{option}</option>
                             ))}
@@ -118,7 +118,7 @@ function ItemsList() {
                 </div>
 
                 <div className={styles.selected_item}>
-                    {(option && (option!=="default")) ? (<h2>{option}</h2>) : (<h2>Selecione uma opção</h2>)}
+                    {(option && (option !== "default")) ? (<h2>{option}</h2>) : (<h2>{optionDefault}</h2>)}
                 </div>
 
             </form>

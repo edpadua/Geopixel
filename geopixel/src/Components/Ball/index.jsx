@@ -38,7 +38,7 @@ function Ball() {
     return (
         <div ref={ref} className={styles.container}>
             <span className={styles.ball}
-                onMouseEnter={() => setIsShown({ x: randomNumberInRange(-(height/2),(height/2)), y: randomNumberInRange(-(width/2),(width/2)) })}
+                onMouseEnter={() => setIsShown({ x: randomNumberInRange(-(height/2)+12,(height/2)-12), y: randomNumberInRange(-(width/2),(width/2)) })}
                 onMouseLeave={() => setIsShown({ x: 0, y: 0 })}
                 style={{
                     transform: `translateY(${isShown.y}px) translateX(${isShown.x}px)`
