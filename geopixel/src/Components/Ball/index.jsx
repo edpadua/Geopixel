@@ -4,16 +4,21 @@ import styles from "./Ball.module.css"
 
 
 function Ball() {
-    const [isShown, setIsShown] = useState(
+
+    //Ball's coordenates 
+    const [coord, setCoord] = useState(
         { x: 0, y: 0 }
     );
 
+    //Containter's height 
     const [height, setHeight] = useState(0);
+    //Containter's width 
     const [width, setWidth] = useState(0);
 
     const ref = useRef(null);
 
-    const getListSize = () => {
+    //Get the width and height of container
+    const getContainerSize = () => {
         const newWidth = ref.current.clientWidth;
         setWidth(newWidth);
     
@@ -21,15 +26,16 @@ function Ball() {
         setHeight(newHeight);
       };
 
+      //Gets window's width and height
       useEffect(() => {
-        getListSize();
+        getContainerSize();
       }, []);
 
       useEffect(() => {
-        window.addEventListener("resize", getListSize);
+        window.addEventListener("resize", getContainerSize);
       }, []);
 
-
+    //Generate random number in a range
     function randomNumberInRange(min, max) {
         // get number between min (inclusive) and max (inclusive)
         return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -37,16 +43,19 @@ function Ball() {
 
     return (
         <div ref={ref} className={styles.container}>
+
+            {/** 
+               Ball element
+               Translation of the x and y axes randomly on hover
+            **/}
             <span className={styles.ball}
-                onMouseEnter={() => setIsShown({ x: randomNumberInRange(-(height/2)+12,(height/2)-12), y: randomNumberInRange(-(width/2),(width/2)) })}
-                onMouseLeave={() => setIsShown({ x: 0, y: 0 })}
+                onMouseEnter={() => setCoord({ x: randomNumberInRange(-(height/2)+12,(height/2)-12), y: randomNumberInRange(-(width/2),(width/2)) })}
+                onMouseLeave={() => setCoord({ x: 0, y: 0 })}
                 style={{
-                    transform: `translateY(${isShown.y}px) translateX(${isShown.x}px)`
+                    transform: `translateY(${coord.y}px) translateX(${coord.x}px)`
 
                 }}
             >
-
-
             </span>
           
         </div>

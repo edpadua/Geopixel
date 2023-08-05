@@ -4,13 +4,16 @@ import { useState } from "react";
 
 function ItemsList() {
 
-
-
+    
+    //Input value state
     const [value, setValue] = useState("");
+    //Selected option state
     const [option, setOption] = useState();
 
+    //Default select label string
     const optionDefault = "Selecione uma opção"
 
+    //Remove list item
     const removeList = e => {
         e.preventDefault();
         if (!value) {
@@ -38,12 +41,14 @@ function ItemsList() {
         }
     };
 
+    //Clear input
     const clearInput = e => {
         e.preventDefault();
         setValue("");
 
     };
 
+    //Add list item
     const addList = e => {
         e.preventDefault();
 
@@ -68,7 +73,7 @@ function ItemsList() {
     };
 
 
-
+    //List initialization
     const [list, setList] = useState([
         'Geopixel',
         'geopixel',
@@ -76,8 +81,11 @@ function ItemsList() {
 
     return (
         <div className={styles.container}>
+
+            {/** Inputs **/}
             <form className={styles.form_list} >
                 <div className={`${styles.form_list_item} ${styles.form_list_item_inputs}`} >
+                    {/** Item list selector **/}
                     <div className={`${styles.center} ${styles.form_list_item_inputs}`}>
                         <select
                             value={option}
@@ -91,6 +99,7 @@ function ItemsList() {
                         </select>
                     </div>
 
+                    {/** Text input **/}
                     <div className={styles.center}>
                         <input
                             className={styles.form_control}
@@ -104,7 +113,7 @@ function ItemsList() {
 
                 </div>
 
-
+                {/** Buttons  **/}
                 <div className={styles.center}>
                     <button className={styles.form_list_button} onClick={addList}>
                         Adicionar
@@ -116,7 +125,8 @@ function ItemsList() {
                         Limpar caixa
                     </button>
                 </div>
-
+                
+                {/** List item selected **/}
                 <div className={styles.selected_item}>
                     {(option && (option !== "default")) ? (<h2>{option}</h2>) : (<h2>{optionDefault}</h2>)}
                 </div>
