@@ -8,7 +8,7 @@ function App() {
 
 
   return (
-    <div className='app_containter'>
+    <div className='app_container'>
       <div className='app_column'>
         <Clock />
         <ItemsList />
