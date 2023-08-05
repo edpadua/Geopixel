@@ -10,7 +10,7 @@
 .ball {
     height: 25px;
     width: 25px;
-    background-color: red;
+    background-color: var(--ball-color);
     border-radius: 50%;
     display: inline-block;
     transition: transform 1000ms ease-in-out; 

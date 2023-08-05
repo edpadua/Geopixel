@@ -6,3 +6,19 @@
 .app_column{
   width:50%;
 }
+
+
+@media (max-width: 767px) {
+  .app_containter{
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+
+@media (max-width: 767px) {
+  .app_column{
+    width:100%;
+  }
+  
+}  

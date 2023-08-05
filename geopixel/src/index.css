@@ -36,6 +36,7 @@ body {
   --clock-background:#98dd59;
   --items-background:#b7924e;
   --ball-background:#ffffff;
+  --ball-color:red;
   min-height: 100vh;
 }
 
